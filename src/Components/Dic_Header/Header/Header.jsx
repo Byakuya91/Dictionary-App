@@ -7,11 +7,9 @@ import styles from "../Header/Header.module.css";
 // ! IMPORTS NOT WORKING
 // import { ReactComponent as Logo } from "../../../ProjectAssets/logo.svg";
 // import { ReactComponent as DarkIcon } from "../../../ProjectAssets/icon-moon.svg";
-import { ReactComponent as Logo } from "../../../ProjectAssets/logo.svg";
-
-import SearchBar from "../SearchBar/SearchBar";
 
 // ?Component imports
+import SearchBar from "../SearchBar/SearchBar";
 
 const Header = () => {
   return (
