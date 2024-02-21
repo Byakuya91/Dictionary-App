@@ -8,7 +8,7 @@ import axios from "axios";
 // TODO:
 // 1) research API and how it works(DONE)
 // 2) Implement and test the API(DONE)
-// 3) pass down the Async function down to the search bar component.
+// 3) pass down the Async function down to the search bar component(DONE).
 // 4) Code out helper functions and flesh out CSS sheet.
 // 5) Hook up the search bar(after setting it up) and have it make an API
 
@@ -93,6 +93,9 @@ function App() {
           error={inputError}
         />
       </div>
+      {/* {error && <ErrorView />} */}
+      {/* Render Content component and pass necessary props */}
+      {/* {!error && data && <Content data={data} />} */}
     </main>
   );
 }
