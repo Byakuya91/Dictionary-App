@@ -38,29 +38,35 @@ function App() {
   //     console.error("Error fetching data:", error); // Log any errors to the console
   //   });
 
+  // ? Testing the data
+  // console.log("the data is:", data);
+
   // ? SUB STEP TWO: creating function for axios call
   const grabWord = async () => {
-    //  ? resetting the errors for Input and API fetching
+    // Resetting the errors for input and API fetching
     setError(false);
     setInputError(false);
 
     try {
-      // ?If there's NO input
+      // If there's NO input
       if (input === "") {
-        // ? Set input error if input is empty
+        // Set input error if input is empty
         setInputError(true);
         return;
       }
 
-      // ! Making the API call
+      // Making the API call
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`
       );
 
-      // ? Converting response data to JSON
+      // Converting response data to JSON
       const responseData = response.data;
 
-      //  ? setting the fetched data
+      // Log the API response data to the console
+      console.log("API response data:", responseData);
+
+      // Setting the fetched data
       setData(responseData);
     } catch (error) {
       // If the data is NOT retrieved

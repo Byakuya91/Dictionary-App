@@ -4,8 +4,8 @@ import React from "react";
 import styles from "../Header/Header.module.css";
 
 // ?Asset imports
-// ! IMPORTS NOT WORKING
 import Logo from "../../../Assets/logo.svg";
+
 // ?Component imports
 import SearchBar from "../SearchBar/SearchBar";
 
