@@ -1,6 +1,7 @@
+// ? React imports
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ grabWord, HandleToggleTheme, error }) => {
   return (
     <div>
       <p>Search Bar placeholder text</p>

@@ -3,27 +3,36 @@ import React from "react";
 // ? styles import
 import styles from "../Header/Header.module.css";
 
-// ?ProjectAsstets imports
+// ?Asset imports
 // ! IMPORTS NOT WORKING
-
+import Logo from "../../../Assets/logo.svg";
 // ?Component imports
 import SearchBar from "../SearchBar/SearchBar";
 
-const Header = () => {
+const Header = ({
+  grabWord,
+  toggle,
+  handleToggleTheme,
+  font,
+  handleFontChange,
+  error,
+}) => {
   return (
     <header>
-      <div>
-        <div>
-          <p>Header placement text</p>
-        </div>
-        <div>
+      <div className={styles["header"]}>
+        <img src={Logo} alt="Logo" />
+        <div className={styles["header-widgets"]}>
           <p>dropdown placeholder text</p>
         </div>
         <div>
           <p>Theme Switcher placeholder</p>
         </div>
       </div>
-      <SearchBar />
+      <SearchBar
+        grabWord={grabWord}
+        handleToggleTheme={handleToggleTheme}
+        error={error}
+      />
     </header>
   );
 };

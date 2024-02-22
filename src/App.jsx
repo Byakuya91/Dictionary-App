@@ -71,7 +71,7 @@ function App() {
   // ?SUB-STEP THREE: Helper functions
 
   // ? dark and light mode function
-  const handleToggle = () => {
+  const handleToggleTheme = () => {
     // Flipping toggle boolean
     setToggleTheme((prevToggleState) => !prevToggleState);
   };
@@ -87,7 +87,7 @@ function App() {
         <Header
           grabWord={grabWord}
           toggle={toggleTheme}
-          handleToggle={handleToggle}
+          handleToggleTheme={handleToggleTheme}
           font={font}
           handleFontChange={handleFontChange}
           error={inputError}
