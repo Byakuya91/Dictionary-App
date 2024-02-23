@@ -6,8 +6,11 @@ import styles from "../Header/Header.module.css";
 // ?Asset imports
 import Logo from "../../../Assets/logo.svg";
 import DarkIcon from "../../../Assets/icon-moon.svg";
+// import { ReactComponent as DarkIcon } from "../../../Assets/icon-moon.svg";
+
 // ?Component imports
 import SearchBar from "../SearchBar/SearchBar";
+import ToggleThemeSwitch from "../ToggleThemeSwitch/ToggleThemeSwitch";
 
 const Header = ({
   grabWord,
@@ -24,8 +27,12 @@ const Header = ({
         <div className={styles["header-widgets"]}>
           <p>dropdown placeholder text</p>
         </div>
-        <div>
-          <p>Theme Switcher Toggle placeholder</p>
+        <div className={styles["header-divider"]}>
+          <ToggleThemeSwitch
+            toggle={toggle}
+            handleToggleTheme={handleToggleTheme}
+          />
+
           <img
             src={DarkIcon}
             alt="DarkIcon"

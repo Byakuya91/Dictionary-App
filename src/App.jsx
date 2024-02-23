@@ -6,11 +6,17 @@ import Header from "./Components/Dic_Header/Header/Header";
 import axios from "axios";
 
 // TODO:
+// ! SearchBar
 // 1) research API and how it works(DONE)
 // 2) Implement and test the API(DONE)
 // 3) pass down the Async function down to the search bar component(DONE).
-// 4) Code out helper functions and flesh out CSS sheet.
-// 5) Hook up the search bar(after setting it up) and have it make an API
+// 4) Code out helper functions and flesh out CSS sheet(DONE)
+// 5) Hook up the search bar(after setting it up) and have it make an API(DONE)
+
+// ! Toggle theme switcher
+// 1) Setup the Toggle theme component
+// 2) Get the props passed down and hook up the functions
+// 3) Get the CSS sheet done
 
 function App() {
   // ? STEP ONE: define state variables

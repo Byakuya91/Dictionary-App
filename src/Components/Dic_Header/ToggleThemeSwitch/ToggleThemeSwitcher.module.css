@@ -1,0 +1,48 @@
+.toggle-container {
+    position: relative;
+    /* Position the container relative to its normal position */
+    width: 2.5em;
+    /* Set the width of the container */
+    height: 1.25em;
+    /* Set the height of the container */
+    background-color: var(--clr-primary-400);
+    /* Set the background color of the container */
+    border-radius: 0.625em;
+    /* Set the border radius of the container */
+    cursor: pointer;
+    /* Set the cursor style to pointer */
+}
+
+.toggle-container:hover {
+    background-color: var(--clr-secondary-100);
+    /* Change the background color of the container on hover */
+}
+
+.toggle-switch {
+    position: absolute;
+    /* Position the toggle switch absolutely within its container */
+    width: 0.875em;
+    /* Set the width of the toggle switch */
+    height: 0.875em;
+    /* Set the height of the toggle switch */
+    background-color: var(--clr-primary-100);
+    /* Set the background color of the toggle switch */
+    border-radius: 50%;
+    /* Set the border radius to make the toggle switch round */
+    top: 0.2em;
+    /* Position the toggle switch from the top */
+    left: 0.2em;
+    /* Position the toggle switch from the left */
+    transition: left 0.2s ease-in;
+    /* Add a transition effect to the left property for smooth animation */
+}
+
+.toggle {
+    left: 1.4em;
+    /* Move the toggle switch to the right side of the container when toggled */
+}
+
+.dark {
+    background-color: var(--clr-secondary-100);
+    /* Set the background color to a darker shade for dark mode */
+}
