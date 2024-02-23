@@ -42,8 +42,9 @@ function App() {
   // console.log("the data is:", data);
 
   // ? SUB STEP TWO: creating function for axios call
-  const grabWord = async () => {
+  const grabWord = async (input) => {
     // Resetting the errors for input and API fetching
+    console.log("Resetting errors");
     setError(false);
     setInputError(false);
 
@@ -51,25 +52,30 @@ function App() {
       // If there's NO input
       if (input === "") {
         // Set input error if input is empty
+        console.log("Input is empty");
         setInputError(true);
         return;
       }
 
       // Making the API call
+      console.log("Making API call");
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`
       );
 
       // Converting response data to JSON
+      console.log("Converting response data to JSON");
       const responseData = response.data;
 
       // Log the API response data to the console
       console.log("API response data:", responseData);
 
       // Setting the fetched data
+      console.log("Setting fetched data");
       setData(responseData);
     } catch (error) {
       // If the data is NOT retrieved
+      console.error("Error occurred:", error);
       setError(true);
     }
   };

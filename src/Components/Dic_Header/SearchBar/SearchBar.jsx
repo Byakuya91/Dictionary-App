@@ -26,6 +26,9 @@ const SearchBar = ({ grabWord, HandleToggleTheme, error }) => {
     // take in the typed word from SearchBar
     const typedWord = inputRef.current.value;
 
+    // Log the typed word to the console
+    console.log("Typed word:", typedWord);
+
     // Call the API function with the typed word
     grabWord(typedWord);
   };
