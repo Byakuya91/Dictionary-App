@@ -4,11 +4,14 @@ import React, { useRef } from "react";
 // ? Assets import
 import SearchIcon from "../../../Assets/icon-search.svg";
 
+// ? Module styles imports
+import styles from "../SearchBar/SearchBar.module.css";
+
 const SearchBar = ({ grabWord, HandleToggleTheme, error }) => {
   //TODO:
   // ? 1) Create a ref to hold the typedWord.(DONE)
-  // ? 2) Create a function to utilize that ref and call grabWord  props function(ONGOING)
-  // ? 3) Create a function to enable the API search when the enter key is pressed based on keycodes
+  // ? 2) Create a function to utilize that ref and call grabWord  props function(DONE)
+  // ? 3) Create a function to enable the API search when the enter key is pressed based on keycodes(DONE)
 
   // STEP ONE: create a ref
   const inputRef = useRef();
@@ -45,7 +48,11 @@ const SearchBar = ({ grabWord, HandleToggleTheme, error }) => {
 
   return (
     <section>
-      <div>
+      <div
+        className={`${error ? styles["error"] : ""} ${
+          HandleToggleTheme ? styles["light"] : styles["dark"]
+        } ${styles["search-bar"]}`}
+      >
         <input
           name="search"
           type="text"
@@ -58,6 +65,13 @@ const SearchBar = ({ grabWord, HandleToggleTheme, error }) => {
         <button aria-label="search" onClick={handleWordInput}>
           <img src={SearchIcon} alt="Search Icon" />
         </button>
+      </div>
+      <div>
+        {error && (
+          <div className={styles["empty_error"]}>
+            <p>Whoops can&apos;t be empty...</p>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import styles from "../Header/Header.module.css";
 
 // ?Asset imports
 import Logo from "../../../Assets/logo.svg";
-
+import DarkIcon from "../../../Assets/icon-moon.svg";
 // ?Component imports
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -25,7 +25,14 @@ const Header = ({
           <p>dropdown placeholder text</p>
         </div>
         <div>
-          <p>Theme Switcher placeholder</p>
+          <p>Theme Switcher Toggle placeholder</p>
+          <img
+            src={DarkIcon}
+            alt="DarkIcon"
+            className={`${toggle ? "" : styles["icon-dark"]} ${
+              styles["theme-icon"]
+            }`}
+          />
         </div>
       </div>
       <SearchBar

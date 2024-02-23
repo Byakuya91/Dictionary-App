@@ -1,0 +1,84 @@
+/* ? LAYOUT and BACKGROUND styles */
+.search-bar,
+.search-bar button {
+    display: flex;
+}
+
+.search-bar input {
+    background-color: var(--clr-primary-200);
+}
+
+/*? INPUT styles */
+.search-bar input {
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 0 1em;
+    font-weight: var(--fw-bold);
+}
+
+/* ?SEARCH BAR Styles */
+
+/* ?SB Input focus */
+.search-bar input:focus {
+    border: 0.0625em solid var(--clr-secondary-100);
+}
+
+/* ? SB button styles */
+.search-bar button {
+    position: absolute;
+    align-items: center;
+    width: 1em;
+    height: 1em;
+    right: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+
+/* ? EMPTY ERROR MESSAGE  Styles */
+.empty-error {
+    color: var(--clr-secondary-200);
+    /* Set color for empty error message */
+    font-size: 0.875rem;
+    /* Set font size for empty error message */
+}
+
+/*? BG LIGHT and DARK styles */
+
+/* ? DARK MODE BG */
+.dark {
+    background-color: var(--clr-primary-600);
+    /* Set background color for dark mode */
+}
+
+/* ? LIGHT MODE BG */
+.light {
+    background-color: var(--clr-primary-200);
+    /* Set background color for light mode */
+}
+
+/* ? MEDIA QUERY FOR SCREEN WIDTH */
+@media screen and (min-width: 48em) {
+    .search-bar input {
+        font-size: 1.25rem;
+        /* Set font size for search bar input on larger screens */
+    }
+
+    .search-bar button svg {
+        width: 1em;
+        /* Set width for search bar button SVG icon on larger screens */
+        height: 1em;
+        /* Set height for search bar button SVG icon on larger screens */
+    }
+
+    .empty-error {
+        font-size: 1rem;
+        /* Set font size for empty error message on larger screens */
+    }
+}
