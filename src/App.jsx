@@ -113,7 +113,7 @@ function App() {
       </div>
       {/* {error && <ErrorView />} */}
       {/* Render Content component and pass necessary props */}
-      {/* {!error && data && <Content data={data} />} */}
+      {/* {!error && data && <Content wordData={data} />} */}
     </main>
   );
 }
