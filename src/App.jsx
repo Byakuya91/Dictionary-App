@@ -14,9 +14,9 @@ import axios from "axios";
 // 5) Hook up the search bar(after setting it up) and have it make an API(DONE)
 
 // ! Toggle theme switcher
-// 1) Setup the Toggle theme component
-// 2) Get the props passed down and hook up the functions
-// 3) Get the CSS sheet done
+// 1) Setup the Toggle theme component(DONE)
+// 2) Get the props passed down and hook up the functions(DONE)
+// 3) Get the CSS sheet done(DONE)
 
 function App() {
   // ? STEP ONE: define state variables
@@ -90,17 +90,25 @@ function App() {
 
   // ? dark and light mode function
   const handleToggleTheme = () => {
+    // ! Console log to test
+    console.log("Toggle Test");
     // Flipping toggle boolean
     setToggleTheme((prevToggleState) => !prevToggleState);
   };
 
   // ? font changing
-  const handleFontChange = () => {
-    setFont(font);
+  // const handleFontChange = () => {
+  //   setFont(font);
+  // };
+
+  const handleFontChange = (newFont) => {
+    setFont(newFont);
   };
+  
 
   return (
-    <main className="`${toggleTheme ? 'light' : 'dark'} ${font}`">
+    <main className={`${toggleTheme ? 'light' : 'dark'} ${font}`}>
+
       <div className="container">
         <Header
           grabWord={grabWord}
