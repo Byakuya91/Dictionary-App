@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "./Components/Dic_Header/Header/Header";
 // ? module imports
 import axios from "axios";
+import Content from "./Components/Dict_Content/Content/Content";
 
 // TODO:
 // ! SearchBar
@@ -119,6 +120,9 @@ function App() {
           error={inputError}
         />
       </div>
+      < Content
+       wordData={data}
+      />
       {/* {error && <ErrorView />} */}
       {/* Render Content component and pass necessary props */}
       {/* {!error && data && <Content wordData={data} />} */}
