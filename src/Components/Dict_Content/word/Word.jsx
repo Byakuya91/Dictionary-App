@@ -1,63 +1,58 @@
-// KEY imports
+// Import React and other necessary libraries
 import React from "react";
-// ! needs to be coded but import necessary 
+import { v4 as uuidv4 } from "uuid";
+import Definitions from "../Definitions/Definitions";
+
+// Placeholder for future imports and CSS modules
 // import Definition from '../Definition/Definition';
 // import { ReactComponent as NewWindowIcon } from '../../assets/icon-new-window.svg';
 // import { ReactComponent as PlayIcon } from '../../../Assets/icon-play.svg';
-
-
-
-import { v4 as uuidv4 } from 'uuid'; 
-import Definitions from "../Definitions/Definitions";
-
-// ! Needs to be coded
 // import styles from '../Word/Word.module.css';
 
+const Word = ({ wordData }) => {
+  // Word variables
+  const single_Word = wordData[0];
+  const phoneticsArray = single_Word.phonetics;
 
-//  STEP ONE: get the boilerplate setup(DONE)
- const Word = ({wordData})=>{
+  //? Map each 'meaning' in 'single_Word.meanings' to the Definitions component
+  const definition = single_Word.meanings.map((meaning) => {
+    return <Definitions key={uuidv4()} meaning={meaning} />;
+  });
 
+  //
+  console.log(" Meanings:", definition);
 
-    // TODO:
-    // 1) Display word and phoentics(DONE)
-    // 2) Display definition of the words via a component(ONGOING)
+  // ? Gaining access to phonetics array
 
-    // STEP TWO: grabbing the word and seeing what is inside of it
-    const single_Word = wordData[0];
+  console.log("the phoneticsArray is", phoneticsArray);
 
-    // Inside contains the object of the word, including properties like definition, parts of speech etc.
-    // console.log("the single word is:", single_Word);
+  // ?Finding the meaning within the words
+  console.log("First meaning:", single_Word.meanings[0]);
+  // console.log("First definition:", single_Word.meanings[0].definitions[0]);
+  // console.log("second definition:", single_Word.meanings[0].definitions[1]);
 
-    // STEP THREE: map out the individual definitions on the page
+  // ? Finding the source URLs
+  console.log("Source URLs:", single_Word.sourceUrls);
 
-    const definition = single_Word.meanings.map(meaning => {
-        return <Definitions key={uuidv4()} meaning={meaning} />;
-      });
-    
-
-    //  ! Definitions are not showing up, testing the elements
-
-    console.log(" Meanings:", definition);
-
-    return (
-        <section>
-            <div>
-            <div>
-          <h1>{single_Word.word}</h1>
-          <p>{single_Word.phonetic}</p>
-          <p>{definition}</p>
-        </div>
-        {/* <div>Play Icon placeholder</div> */}
-            </div>
-        </section>
-
-
-
-      );
-    };
-    
-    export default Word;
-
-
-
-
+  //S5 Render the component in JSX format
+  return (
+    <section>
+      <div>
+        <h1>{single_Word.word}</h1>
+        <p>{phoneticsArray[1]?.text}</p>
+        <div>{definition}</div>
+      </div>
+      <div>
+        <h3>Source</h3>
+        <a
+          href={single_Word.sourceUrls[0]}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {single_Word.sourceUrls[0]}
+        </a>
+      </div>
+    </section>
+  );
+};
+export default Word;
