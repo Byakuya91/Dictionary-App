@@ -20,25 +20,41 @@ const Word = ({ wordData }) => {
   });
 
   //
-  console.log(" Meanings:", definition);
+  // console.log(" Meanings:", definition);
 
   // ? Gaining access to phonetics array
 
-  console.log("the phoneticsArray is", phoneticsArray);
+  // console.log("the phoneticsArray is", phoneticsArray);
 
   // ?Finding the meaning within the words
-  console.log("First meaning:", single_Word.meanings[0]);
+  // console.log("First meaning:", single_Word.meanings[0]);
   // console.log("First definition:", single_Word.meanings[0].definitions[0]);
   // console.log("second definition:", single_Word.meanings[0].definitions[1]);
 
   // ? Finding the source URLs
-  console.log("Source URLs:", single_Word.sourceUrls);
+  // console.log("Source URLs:", single_Word.sourceUrls);
 
-  //S5 Render the component in JSX format
+  //  add audio player
+
+  const phoneticsWithAudio = phoneticsArray.find(
+    (phonetic) => phonetic.audio !== ""
+  );
+  // console.log("Audio URL:", phoneticsWithAudio?.audio);
+
+  // console.log("phoneticsArray:", phoneticsArray);
+  // console.log("Is it an array?", Array.isArray(phoneticsArray));
+
+  // function to play audio
+  const playAudio = () => {
+    const audio = new Audio(phoneticsWithAudio?.audio);
+    audio.play();
+  };
+
   return (
     <section>
       <div>
         <h1>{single_Word.word}</h1>
+        <button onClick={playAudio}>Play</button>
         <p>{phoneticsArray[1]?.text}</p>
         <div>{definition}</div>
       </div>
