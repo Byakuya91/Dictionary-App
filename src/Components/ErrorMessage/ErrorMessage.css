@@ -1,0 +1,18 @@
+.error-container {
+  text-align: center;
+  padding: 20px;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-emoji {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  font-size: 1rem;
+  font-weight: 500;
+}

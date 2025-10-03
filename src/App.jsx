@@ -5,6 +5,7 @@ import Header from "./Components/Dic_Header/Header/Header";
 // ? module imports
 import axios from "axios";
 import Content from "./Components/Dict_Content/Content/Content";
+import ErrorMessage from "./Components/ErrorMessage/ErrorMessage";
 
 // TODO:
 // ! SearchBar
@@ -29,6 +30,7 @@ function App() {
   const [toggleTheme, setToggleTheme] = useState(true);
   const [font, setFont] = useState("inter");
 
+  //? Functions
   const grabWord = async (input) => {
     console.log("Making API call for:", input);
     setErrorMessage("");
@@ -47,7 +49,10 @@ function App() {
     }
   };
 
-  // Handlers
+  const clearError = () => setErrorMessage("");
+  // In the return:
+
+  // ? Handlers
 
   const handleInputError = (message) => {
     setErrorMessage(message);
@@ -82,13 +87,15 @@ function App() {
         />
       </div>
 
-      {errorMessage && (
+      {/* {errorMessage && (
         <div className="error-container">
           <p className="error-emoji">😕</p>
           <p className="error-message">{errorMessage}</p>
         </div>
       )}
 
+      {!errorMessage && data && <Content wordData={data} />} */}
+      <ErrorMessage message={errorMessage} clearError={clearError} />
       {!errorMessage && data && <Content wordData={data} />}
     </main>
   );

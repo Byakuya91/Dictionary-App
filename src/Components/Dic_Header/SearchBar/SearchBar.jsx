@@ -45,7 +45,8 @@ const SearchBar = ({ grabWord, onInputError, handleToggleTheme, error }) => {
 
   // Handle Enter key press
   const handleEnterKeyPress = (e) => {
-    if (e.key === "Enter" && word.trim()) {
+    if (e.key === "Enter") {
+      console.log("Enter key pressed, word:", word);
       handleWordInput();
     }
   };
