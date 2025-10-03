@@ -17,6 +17,7 @@ const Header = ({
   toggle,
   handleToggleTheme,
   font,
+  onInputError,
   handleFontChange,
   error,
 }) => {
@@ -44,6 +45,7 @@ const Header = ({
       </div>
       <SearchBar
         grabWord={grabWord}
+        onInputError={onInputError}
         handleToggleTheme={handleToggleTheme}
         error={error}
       />
