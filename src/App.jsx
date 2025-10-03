@@ -5,7 +5,7 @@ import Header from "./Components/Dic_Header/Header/Header";
 // ? module imports
 import axios from "axios";
 import Content from "./Components/Dict_Content/Content/Content";
-import ErrorMessage from "./Components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "./Components/Dict_Content/ErrorMessage/ErrorMessage";
 
 // TODO:
 // ! SearchBar

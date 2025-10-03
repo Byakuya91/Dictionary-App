@@ -1,8 +1,8 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import WordHeader from "../../WordHeader/WordHeader";
-import MeaningsList from "../../MeaningsList/MeaningsList";
-import SourceLink from "../../SourceLink/SourceLink";
+import MeaningsList from "../MeaningsList/MeaningsList";
+import SourceLink from "../SourceLink/SourceLink";
 import PropTypes from "prop-types";
 // import "./Word.css";
 

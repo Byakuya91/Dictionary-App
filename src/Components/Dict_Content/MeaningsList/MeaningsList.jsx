@@ -1,7 +1,7 @@
 // src/Components/Word/MeaningsList.jsx
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import Definitions from "../../Components/Dict_Content/Definitions/Definitions";
+import Definitions from "../Definitions/Definitions";
 // import "./MeaningsList.css";
 
 const MeaningsList = ({ meanings }) => {
