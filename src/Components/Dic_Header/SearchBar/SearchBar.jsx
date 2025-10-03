@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 
 // ? Assets import
-import SearchIcon from "../../../Assets/icon-search.svg";
+import SearchIcon from "../../../assets/icon-search.svg";
 
 // ? Module styles imports
-import styles from "../SearchBar/SearchBar.module.css";
+import styles from "./SearchBar.module.css";
 
 const SearchBar = ({ grabWord, onInputError, handleToggleTheme, error }) => {
   // State variables

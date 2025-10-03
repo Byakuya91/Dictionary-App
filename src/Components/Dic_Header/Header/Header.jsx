@@ -4,8 +4,8 @@ import React from "react";
 import styles from "../Header/Header.module.css";
 
 // ?Asset imports
-import Logo from "../../../Assets/logo.svg";
-import DarkIcon from "../../../Assets/icon-moon.svg";
+import Logo from "../../../assets/logo.svg";
+import DarkIcon from "../../../assets/icon-moon.svg";
 // import { ReactComponent as DarkIcon } from "../../../Assets/icon-moon.svg";
 
 // ?Component imports

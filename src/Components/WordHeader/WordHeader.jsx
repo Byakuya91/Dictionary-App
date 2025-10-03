@@ -1,6 +1,7 @@
 // src/Components/Word/WordHeader.jsx
 import React from "react";
-// import "./WordHeader.css";
+import "./WordHeader.css";
+import PlayIcon from "../../assets/icon-play.svg";
 
 const WordHeader = ({ word, phonetics }) => {
   // Find the first phonetic with audio
@@ -24,8 +25,12 @@ const WordHeader = ({ word, phonetics }) => {
       <h1>{word}</h1>
       <p className="phonetic-text">{phoneticText}</p>
       {phoneticsWithAudio.audio && (
-        <button onClick={playAudio} className="play-button">
-          Play Audio
+        <button
+          onClick={playAudio}
+          className="play-button"
+          aria-label="Play audio button"
+        >
+          <img src={PlayIcon} alt="Play audio icon" className="play-icon" />
         </button>
       )}
     </div>
