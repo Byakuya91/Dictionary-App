@@ -6,7 +6,6 @@ import styles from "../Header/Header.module.css";
 // ?Asset imports
 import Logo from "../../../assets/logo.svg";
 import DarkIcon from "../../../assets/icon-moon.svg";
-// import { ReactComponent as DarkIcon } from "../../../Assets/icon-moon.svg";
 
 // ?Component imports
 import SearchBar from "../SearchBar/SearchBar";
@@ -23,17 +22,23 @@ const Header = ({
 }) => {
   return (
     <header>
-      <div className={styles["header"]}>
-        <img src={Logo} alt="Logo" />
-        <div className={styles["header-widgets"]}>
-          <p>dropdown placeholder text</p>
+      <div className={styles.header}>
+        {/* Left: Logo */}
+        <div className={styles.left}>
+          <img src={Logo} alt="Logo" />
         </div>
-        <div className={styles["header-divider"]}>
+
+        {/* Center: dropdown placeholder (later your font selector maybe) */}
+        <div className={styles.center}>
+          <h1>Dictionary text</h1>
+        </div>
+
+        {/* Right: theme toggle + dark icon */}
+        <div className={styles.right}>
           <ToggleThemeSwitch
             toggle={toggle}
             handleToggleTheme={handleToggleTheme}
           />
-
           <img
             src={DarkIcon}
             alt="DarkIcon"
@@ -43,6 +48,8 @@ const Header = ({
           />
         </div>
       </div>
+
+      {/* Search bar sits below header */}
       <SearchBar
         grabWord={grabWord}
         onInputError={onInputError}

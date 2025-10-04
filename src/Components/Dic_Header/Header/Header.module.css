@@ -1,89 +1,128 @@
 /* Applies margin at the bottom of all <header> elements */
 header {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 /* Styles for the header container */
 .header {
-    /* Flexbox layout with space between items */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Font size */
-    font-size: 0.875rem;
-    /* Margin at the bottom */
-    margin-bottom: 1.25em;
+  /* Flexbox layout with space between items */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Font size */
+  font-size: 0.875rem;
+  /* Margin at the bottom */
+  margin-bottom: 1.25em;
 }
 
 /* Styles for the dropdown wrapper */
 .dropdown-wrapper {
-    /* Relative positioning for child elements */
-    position: relative;
+  /* Relative positioning for child elements */
+  position: relative;
 }
 
 /* Styles for the select element inside dropdown wrapper */
 .dropdown-wrapper select {
-    /* Hide the select element */
-    display: none;
+  /* Hide the select element */
+  display: none;
 }
 
 /* Styles for the logo */
 .logo {
-    /* Width and height of the logo */
-    width: 1.75em;
-    height: 2em;
+  /* Width and height of the logo */
+  width: 1.75em;
+  height: 2em;
 }
 
 /* Styles for the theme icon */
 .theme-icon {
-    /* Width and height of the theme icon */
-    width: 1.25em;
-    height: 1.25em;
+  /* Width and height of the theme icon */
+  width: 1.25em;
+  height: 1.25em;
 }
 
 /* Styles for the theme icon on hover */
 .theme-icon:hover path {
-    /* Change stroke color on hover */
-    stroke: var(--clr-secondary-100);
+  /* Change stroke color on hover */
+  stroke: var(--clr-secondary-100);
 }
 
 /* Styles for the header widgets container */
 .header-widgets {
-    /* Flexbox layout with aligning items */
-    display: flex;
-    align-items: center;
-    /* Gap between items */
-    gap: 1em;
+  /* Flexbox layout with aligning items */
+  display: flex;
+  align-items: center;
+  /* Gap between items */
+  gap: 1em;
 }
 
 /* Styles for the header divider */
 .header-divider {
-    /* Height and width of the header divider */
-    height: 2em;
-    width: 0.0625em;
-    /* Background color and opacity */
-    background-color: #979797;
-    opacity: 0.3;
+  /* Height and width of the header divider */
+  height: 2em;
+  width: 0.0625em;
+  /* Background color and opacity */
+  background-color: #979797;
+  opacity: 0.3;
 }
 
 /* Styles for the dark-themed icon */
 .icon-dark path {
-    /* Change stroke color for dark-themed icon */
-    stroke: var(--clr-secondary-100);
+  /* Change stroke color for dark-themed icon */
+  stroke: var(--clr-secondary-100);
 }
 
 /* Media query for screens with minimum width of 48em */
 @media screen and (min-width: 48em) {
+  /* Adjust font size for header and buttons */
+  .header,
+  .header button {
+    font-size: var(--fs-body-m);
+  }
 
-    /* Adjust font size for header and buttons */
-    .header,
-    .header button {
-        font-size: var(--fs-body-m);
-    }
+  /* Adjust height and width of the logo */
+  .logo {
+    height: 2.25em;
+    width: 2em;
+  }
+}
 
-    /* Adjust height and width of the logo */
-    .logo {
-        height: 2.25em;
-        width: 2em;
-    }
+.header {
+  display: flex;
+  justify-content: space-between; /* spread items left/center/right */
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+/* Left side: Logo */
+.left {
+  display: flex;
+  align-items: center;
+}
+
+/* Center: text/dropdown */
+.center {
+  flex: 1; /* take remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Right side: toggle + icon */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* spacing between toggle & icon */
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* optional dark icon tweak */
+.icon-dark {
+  opacity: 0.6;
 }
