@@ -29,14 +29,25 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [toggleTheme, setToggleTheme] = useState(true);
   const [font, setFont] = useState("inter");
+  const [isLoading, setIsLoading] = useState(false);
 
   //? Functions
+
+  // API call
+
+  // ? Testing the spinner with API
+  const FAKE_DELAY = true;
+
   const grabWord = async (input) => {
-    console.log("Making API call for:", input);
     setErrorMessage("");
     setData(null);
-
+    setIsLoading(true);
     try {
+      //  ! Testing the spinner with API
+      if (FAKE_DELAY) {
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      }
+
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`
       );
@@ -45,22 +56,21 @@ function App() {
       console.error("API Error:", error);
       console.log("The error response is:", error.response);
 
-      // If server responded with 404 (word not found)
+      //? Error messages for different types of errors
       if (error.response && error.response.status === 404) {
         setErrorMessage(
           "Sorry, we couldn't find that word. Please check your spelling and try again."
         );
-      }
-      // If network-level error (server down, timeout, no response)
-      else if (error.request && !error.response) {
+      } else if (error.request && !error.response) {
         setErrorMessage(
           "Unable to reach the dictionary server. Please check your connection or try again later."
         );
-      }
-      // Any other unexpected error
-      else {
+      } else {
         setErrorMessage("An unexpected error occurred. Please try again.");
       }
+    } finally {
+      // ? setting the loading bar to false when the API call is done
+      setIsLoading(false);
     }
   };
 
@@ -102,14 +112,7 @@ function App() {
         />
       </div>
 
-      {/* {errorMessage && (
-        <div className="error-container">
-          <p className="error-emoji">😕</p>
-          <p className="error-message">{errorMessage}</p>
-        </div>
-      )}
-
-      {!errorMessage && data && <Content wordData={data} />} */}
+      {isLoading && <div>Loading...</div>}
       <ErrorMessage message={errorMessage} clearError={clearError} />
       {!errorMessage && data && <Content wordData={data} />}
     </main>
