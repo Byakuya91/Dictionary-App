@@ -43,9 +43,24 @@ function App() {
       setData(response.data);
     } catch (error) {
       console.error("API Error:", error);
-      setErrorMessage(
-        `The word you searched for could not be found. Please try again.`
-      );
+      console.log("The error response is:", error.response);
+
+      // If server responded with 404 (word not found)
+      if (error.response && error.response.status === 404) {
+        setErrorMessage(
+          "Sorry, we couldn't find that word. Please check your spelling and try again."
+        );
+      }
+      // If network-level error (server down, timeout, no response)
+      else if (error.request && !error.response) {
+        setErrorMessage(
+          "Unable to reach the dictionary server. Please check your connection or try again later."
+        );
+      }
+      // Any other unexpected error
+      else {
+        setErrorMessage("An unexpected error occurred. Please try again.");
+      }
     }
   };
 
