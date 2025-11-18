@@ -14,7 +14,7 @@ const Header = ({ toggle, handleToggleTheme, font, handleFontChange }) => {
         </div>
 
         <div className={styles.center}>
-          <h1>Dictionary text</h1>
+          <h1>Dictionary</h1>
         </div>
 
         <div className={styles.right}>

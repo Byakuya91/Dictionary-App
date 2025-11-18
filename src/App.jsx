@@ -12,12 +12,22 @@ import {
 } from "react-router-dom";
 
 function App() {
+  // ? STEPS FOR FavoritesPage.jsx
+  // TODO:
+  // 0. Decide on a shape for the favorites state(DONE)
+  // 1. Add the favorites state to the App component.(ONGOING)
+  // 2. Pass the favorites state to the FavoritesPage component
+  // 3. Pass the onRemoveFavorite function to the FavoritesPage component
+
   // Global theme & font state (shared across all pages)
   const [toggleTheme, setToggleTheme] = useState(true);
   const [font, setFont] = useState("inter");
+  const [favorites, setFavorites] = useState([]);
 
   const handleToggleTheme = () => setToggleTheme((prev) => !prev);
   const handleFontChange = (newFont) => setFont(newFont);
+
+  // ? Functions for FavoritesPage.jsx
 
   return (
     <main className={`${toggleTheme ? "light" : "dark"} ${font}`}>
