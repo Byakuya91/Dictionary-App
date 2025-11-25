@@ -17,7 +17,10 @@ const Word = ({ wordData }) => {
   return (
     <section className="word-container">
       <WordHeader word={singleWord.word} phonetics={singleWord.phonetics} />
-      <MeaningsList meanings={singleWord.meanings} />
+      <MeaningsList
+        meanings={singleWord.meanings}
+        partsOfSpeech={singleWord.partsOfSpeech}
+      />
       <SourceLink sourceUrls={singleWord.sourceUrls} />
     </section>
   );
