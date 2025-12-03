@@ -3,7 +3,7 @@ import DefinitionItems from "./DefinitionsItems/DefinitionsItems";
 import { v4 as uuidv4 } from "uuid";
 
 // Definitions component that receives 'meaning' object as props
-const Definitions = ({ meaning, partsOfSpeech }) => {
+const Definitions = ({ meaning }) => {
   //S1 Map each definition in 'meaning.definitions' to DefinitionItems components
   const word_definitions = meaning.definitions.map((def) => (
     <DefinitionItems key={uuidv4()} definitions={def} />
