@@ -2,7 +2,7 @@
 import React from "react";
 import "./WordHeader.css";
 import PlayIcon from "../../assets/icon-play.svg";
-import { HeartIcon } from "@heroicons/react/16/solid";
+import { HeartIcon as HeartIconSolid } from "@heroicons/react/16/solid";
 import { useOutletContext } from "react-router-dom";
 
 const WordHeader = ({ word, phonetics, partsOfSpeech, shortDef }) => {
@@ -28,8 +28,35 @@ const WordHeader = ({ word, phonetics, partsOfSpeech, shortDef }) => {
   // console.log("parts of speech are:", partsOfSpeech);
   // console.log("definitions are:", shortDef);
 
-  const { favorites, addFavorite, removeFavorite, isFavorite, setFavorites } =
+  const { favorites, addFavorite, removeFavorite, isFavorite } =
     useOutletContext();
+
+  //? STEPS to wire up favorites button
+  // TODO: read favorites context(DONE)
+  // TODO2: build favoriteObj using: word, phonetics,partsOfSPeech, shortDef(DONE)
+  // TODO3: check if the word is favorite or not(DONE)
+  // TODO4: add or remove favorite based on if the word is favorite or not.
+  // TODO5: wire up the favorite button to add or remove favorite.
+
+  // TODO2:  build favoriteObj
+  const favoriteObj = {
+    word,
+    phonetic: phoneticText,
+    partsOfSpeech,
+    shortDef,
+  };
+
+  // TODO3: check if the word is favorite or not
+  const isFav = isFavorite(word);
+
+  // TODO4: add or remove favorite based on if the word is favorite or not.
+  const handleFavorite = () => {
+    if (isFav) {
+      removeFavorite(favoriteObj);
+    } else {
+      addFavorite(favoriteObj);
+    }
+  };
 
   return (
     <>
@@ -46,7 +73,9 @@ const WordHeader = ({ word, phonetics, partsOfSpeech, shortDef }) => {
           </button>
         )}
       </div>
-      {/* <HeartIcon className="heart-icon size-6" /> */}
+      <button onClick={handleFavorite} className="favorite-btn">
+        {isFav ? "❤️" : "🤍"}
+      </button>
     </>
   );
 };
