@@ -4,6 +4,7 @@ import WordHeader from "../../WordHeader/WordHeader";
 import MeaningsList from "../MeaningsList/MeaningsList";
 import SourceLink from "../SourceLink/SourceLink";
 import PropTypes from "prop-types";
+import { useOutletContext } from "react-router-dom";
 // import "./Word.css";
 
 const Word = ({ wordData }) => {
@@ -13,13 +14,22 @@ const Word = ({ wordData }) => {
   }
 
   const singleWord = wordData[0];
+  console.log(
+    "the parts of  speech are: ",
+    singleWord.meanings[0].partOfSpeech
+  );
 
   return (
     <section className="word-container">
-      <WordHeader word={singleWord.word} phonetics={singleWord.phonetics} />
+      <WordHeader
+        word={singleWord.word}
+        phonetics={singleWord.phonetics}
+        partsOfSpeech={singleWord.meanings[0].partOfSpeech}
+        shortDef={singleWord.meanings[0].definitions[0].definition}
+      />
       <MeaningsList
         meanings={singleWord.meanings}
-        partsOfSpeech={singleWord.partsOfSpeech}
+        // partsOfSpeech={singleWord.partsOfSpeech}
       />
       <SourceLink sourceUrls={singleWord.sourceUrls} />
     </section>

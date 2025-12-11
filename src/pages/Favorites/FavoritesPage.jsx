@@ -1,4 +1,5 @@
 import React from "react";
+import FavoriteCard from "../../Components/Dic_Favorite/FavoriteCard";
 
 const FavoritesPage = ({ favorites, onRemoveFavorite }) => {
   const safeFavorites = favorites || []; // temporary stub
@@ -6,6 +7,8 @@ const FavoritesPage = ({ favorites, onRemoveFavorite }) => {
   return (
     <div className="container">
       <h2>Your favorite words</h2>
+
+      <FavoriteCard />
 
       {safeFavorites.length === 0 ? (
         <p>No favorites yet. Search a word and add it to see it here.</p>
