@@ -5,6 +5,7 @@ const FavoritesPage = ({ favorites, onRemoveFavorite }) => {
   const safeFavorites = favorites || []; // temporary stub
 
   // Temporary dummy data JUST for layout & styling
+  // ! Audio isn't working
   const dummyFavorite = {
     word: "augment",
     phonetic: "/ɔːɡˈmɛnt/",
